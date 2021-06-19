@@ -24,8 +24,10 @@ export default function App() {
     <div className="app">
       <div className="walkthrough">
         {messages.map((message, index) => {
+          const even = index % 2 === 0;
+
           if (messageToShow + 1 === index) {
-            return <div key={index}>I am typing</div>
+            return <Typing key={index} even={even} />
           }
 
           if (index > messageToShow) return <div key={index} />
@@ -35,6 +37,18 @@ export default function App() {
       </div>
     </div>
   );
+}
+
+const Typing = ({ even }) => {
+  return (
+    <div className={`is-typing ${even ? 'is-right' : 'is-left'}`}>
+      <div className="dots">
+        <div />
+        <div />
+        <div />
+      </div>
+    </div>
+  )
 }
 
 const Message = ({message}) => {
