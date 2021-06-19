@@ -63,9 +63,9 @@ const Message = ({message}) => {
       initial={{scale: 0.2, rotate: -5}}
       animate={{scale: 1, rotate: 0}}
     >
-      <div className="avatar">👽</div>
+      <div className="avatar"><span role="img" aria-label="img">👽</span></div>
       <div className="text">{message.text}</div>
-      <div className="avatar">🤖</div>
+      <div className="avatar"><span role="img" aria-label="img">🤖</span></div>
     </motion.div>
   );
 }
